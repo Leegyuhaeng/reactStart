@@ -2,6 +2,7 @@ import "./App.css";
 import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
 import { useRef, useState } from "react";
+import Lifecycle from "./Lifecycle";
 
 // const dummyList = [
 //   {
@@ -66,6 +67,7 @@ function App() {
   // console.log("getdata", getdata);
   return (
     <div className="App">
+      <Lifecycle />
       <h2>일기장</h2>
       <DiaryEditor onCreate={onCreate} />
       <DiaryList onEdit={onEdit} list={getdata} onRemove={onRemove} />
