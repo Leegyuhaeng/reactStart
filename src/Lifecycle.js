@@ -1,5 +1,15 @@
 import React, { useEffect, useState } from "react";
 
+const UnMountTest = () => {
+  useEffect(() => {
+    console.log("Mount");
+    return () => {
+      console.log("UnMount");
+    };
+  }, []);
+  return <div>Unmount testing Component</div>;
+};
+
 const Lifecycle = () => {
   // const [count, setCount] = useState(0);
   // const [text, setText] = useState("");
@@ -31,7 +41,10 @@ const Lifecycle = () => {
 
   return (
     <div style={{ padding: 20 }}>
-      <button type="button" onClick={toggle}></button>
+      <button type="button" onClick={toggle}>
+        on/off
+      </button>
+      {isVisible && <UnMountTest />}
       {/*<div>*/}
       {/*  {count}*/}
       {/*  <button onClick={() => setCount(count + 1)}>+</button>*/}
